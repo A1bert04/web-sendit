@@ -35,22 +35,13 @@ export function Prices() {
     )
     }
 
-    useLayoutEffect(() => {    
+    useEffect(() => {    
       return () => {
         fetchPrices()
         setLoading(false)
       }
     }, [])
 
-    if (loading) {
-        return(
-            <>
-            <Navbar />
-            <div>Loading...</div>
-            <Footer />
-            </>
-        )         
-    }
     return (
         <>
         <Helmet>
@@ -87,7 +78,6 @@ export function Prices() {
                                     </tbody>
                                 )
                             })}
-
                         </table>
                         <div className=" lg:self-start self-center">
                             <div id="makeOrder" className="bg-purple1 cursor-pointer text-white rounded-full w-52 h-14 mt-14 text-center drop-shadow-lg hover:scale-105 text-xl font-main font-semibold hover:hue-rotate-15">
